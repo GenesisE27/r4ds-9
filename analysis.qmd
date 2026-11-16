@@ -83,6 +83,7 @@ largest_fires_sf <- sf::st_sf(
 bounds <- sf::st_bbox(largest_fires_sf)
 
 leaflet(largest_fires_sf) |>
+  addProviderTiles(providers$Esri.WorldStreetMap) |>
   addPolygons(
     popup = ~paste0(
       incident,
